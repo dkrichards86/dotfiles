@@ -1,0 +1,7 @@
+[user]
+    name = USERNAME
+    email = EMAILADDR
+
+[core]
+    editor = nano
+	excludesfile = $HOME/.gitignore_global

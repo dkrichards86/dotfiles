@@ -1,0 +1,20 @@
+layout_virtualenv() {
+  local venv_path="$1"
+  source $HOME/envs/${venv_path}/bin/activate
+}
+
+layout_go() {
+  local go_version=$1
+  source $HOME/.gvm/scripts/gvm
+  gvm use $go_version
+}
+
+layout_nvm() {
+  local node_version=$1
+
+  nvm_sh=~/.nvm/nvm.sh
+  if [[ -e $nvm_sh ]]; then
+    source $nvm_sh
+    nvm use $node_version
+  fi
+}

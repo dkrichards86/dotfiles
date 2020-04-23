@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+setup_gitconfig () {
+  echo 'Setup .gitconfig'
+
+  read -r -p "What is your git user name? " git_username
+  read -r -p "What is your git email address? " git_emailaddr
+
+  sed -e "s/USERNAME/$git_username/g" -e "s/EMAILADDR/$git_emailaddr/g" templates/gitconfig_template > dotfiles/.gitconfig
+
+  echo 'gitconfig'
+}
+
+setup_gitconfig

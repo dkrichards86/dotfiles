@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+DOTFILES_DIR=$HOME
+DOTFILES_ARCHIVE=$HOME/dotfiles_bak
+DOTFILES=(".direnvrc" ".gitconfig" ".gitignore_global" ".zshrc")
+
+if [[ ! -d $DOTFILES_ARCHIVE ]];
+then
+  echo "Creating $DOTFILES_ARCHIVE for backup of any existing dotfiles."
+  mkdir -p $DOTFILES_ARCHIVE
+fi
+
+for FILE in $DOTFILES; do
+  echo $DOTFILES_DIR/$FILE
+  if [[ ! -f "$DOTFILES_DIR/$FILE" ]];
+  then 
+    echo "Moving existing dotfile $FILE from $DOTFILES_DIR to $DOTFILES_ARCHIVE"
+    echo "mv $DOTFILES_DIR/$FILE $DOTFILES_ARCHIVE"
+  fi
+  echo "Creating symlink to $FILE in $DOTFILES_DIR."
+  ln -s -f $PWD/dotfiles/$FILE $DOTFILES_DIR/$FILE
+done
+
+source $HOME/.zshrc
