@@ -3,8 +3,7 @@ export UPDATE_ZSH_DAYS=13
 
 ZSH_THEME="robbyrussell"
 DISABLE_UPDATE_PROMPT="true"
-DISABLE_MAGIC_FUNCTIONS=true
-ENABLE_CORRECTION="true"
+DISABLE_MAGIC_FUNCTIONS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(colorize direnv virtualenv)
