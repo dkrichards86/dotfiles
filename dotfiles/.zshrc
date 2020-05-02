@@ -15,6 +15,8 @@ PS1='$(virtualenv_prompt_info)'$PS1
 alias dcmp="docker-compose"
 alias gsb="git status -s -b"
 
+command -v pyenv 1>/dev/null 2>&1 &&  eval "$(pyenv init -)"
+
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [[ -s "$NVM_DIR/nvm.sh" ]] && source $NVM_DIR/nvm.sh
 
